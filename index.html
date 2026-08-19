@@ -1,680 +1,951 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>TBD GROUP.in | Builders • Real Estate • Interiors</title>
+<title>TBD GROUP.in | Builders • Real Estate • Interiors</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #0b0b0b;
-            color: white;
-            line-height: 1.6;
-        }
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#090a0c;
+    color:#f5f1e8;
+    line-height:1.6;
+}
 
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: #111;
-            border-bottom: 1px solid #333;
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+a{
+    text-decoration:none;
+    color:inherit;
+}
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(9,10,12,0.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #292b30;
+}
 
-        .logo span {
-            color: #aaa;
-        }
+.nav{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 22px;
-            font-size: 14px;
-        }
+.logo-text{
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:3px;
+}
 
-        nav a:hover {
-            color: #aaa;
-        }
+.logo-text span{
+    color:#d8c38a;
+}
 
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            padding: 80px 7%;
-            background: linear-gradient(135deg, #111, #252525);
-        }
+nav{
+    display:flex;
+    gap:25px;
+}
 
-        .hero-content {
-            max-width: 800px;
-        }
+nav a{
+    font-size:14px;
+    color:#ddd;
+    transition:.3s;
+}
 
-        .small-title {
-            color: #aaa;
-            letter-spacing: 4px;
-            font-size: 13px;
-            margin-bottom: 15px;
-        }
+nav a:hover{
+    color:#d8c38a;
+}
 
-        .hero h1 {
-            font-size: clamp(45px, 8vw, 85px);
-            line-height: 1;
-            margin-bottom: 25px;
-        }
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 70px;
+    background:
+    radial-gradient(circle at 50% 20%,#25272c 0%,#090a0c 55%);
+}
 
-        .hero h1 span {
-            color: #aaa;
-        }
+.hero-content{
+    max-width:900px;
+    animation:fadeUp 1.2s ease;
+}
 
-        .hero p {
-            color: #ccc;
-            max-width: 650px;
-            font-size: 18px;
-            margin-bottom: 35px;
-        }
+.hero-logo{
+    width:180px;
+    max-width:55%;
+    margin-bottom:25px;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 14px 25px;
-            background: white;
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-right: 10px;
-        }
+.hero h1{
+    font-size:clamp(42px,8vw,82px);
+    letter-spacing:7px;
+    margin-bottom:10px;
+}
 
-        .btn.dark {
-            background: transparent;
-            color: white;
-            border: 1px solid #777;
-        }
+.hero h1 span{
+    color:#d8c38a;
+}
 
-        section {
-            padding: 90px 7%;
-        }
+.hero h2{
+    font-size:20px;
+    font-weight:400;
+    color:#cfcfcf;
+    margin-bottom:25px;
+}
 
-        .section-title {
-            margin-bottom: 45px;
-        }
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#aaa;
+    font-size:17px;
+}
 
-        .section-title small {
-            color: #999;
-            letter-spacing: 3px;
-        }
+.buttons{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
 
-        .section-title h2 {
-            font-size: 42px;
-            margin-top: 8px;
-        }
+.btn{
+    padding:13px 25px;
+    border:1px solid #d8c38a;
+    color:#d8c38a;
+    border-radius:30px;
+    transition:.3s;
+}
 
-        .about {
-            background: #151515;
-        }
+.btn:hover{
+    background:#d8c38a;
+    color:#090a0c;
+    transform:translateY(-3px);
+}
 
-        .about-text {
-            max-width: 850px;
-            color: #ccc;
-            font-size: 18px;
-        }
+.btn.gold{
+    background:#d8c38a;
+    color:#090a0c;
+}
 
-        .business-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+section{
+    padding:90px 20px;
+}
 
-        .business-card {
-            background: #171717;
-            border: 1px solid #333;
-            padding: 35px;
-            min-height: 280px;
-            transition: 0.3s;
-        }
+.container{
+    max-width:1150px;
+    margin:auto;
+}
 
-        .business-card:hover {
-            transform: translateY(-8px);
-            border-color: #aaa;
-        }
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
 
-        .business-number {
-            color: #777;
-            font-size: 14px;
-        }
+.section-title h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
 
-        .business-card h3 {
-            font-size: 25px;
-            margin: 20px 0 12px;
-        }
+.section-title span{
+    color:#d8c38a;
+}
 
-        .business-card p {
-            color: #aaa;
-        }
+.section-title p{
+    color:#999;
+}
 
-        .services {
-            background: #0e0e0e;
-        }
+.about{
+    background:#0e1013;
+}
 
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-        }
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
 
-        .service {
-            padding: 25px;
-            border: 1px solid #333;
-            background: #151515;
-        }
+.about-text h3{
+    font-size:30px;
+    margin-bottom:15px;
+}
 
-        .service h3 {
-            margin-bottom: 8px;
-        }
+.about-text p{
+    color:#aaa;
+    margin-bottom:15px;
+}
 
-        .service p {
-            color: #aaa;
-        }
+.highlight{
+    color:#d8c38a;
+    font-weight:bold;
+}
 
-        .projects {
-            background: #151515;
-        }
+.business-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
 
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+.business-card{
+    background:#111317;
+    border:1px solid #292b30;
+    border-radius:18px;
+    padding:35px 25px;
+    text-align:center;
+    transition:.4s;
+}
 
-        .project {
-            min-height: 230px;
-            background: #242424;
-            border: 1px solid #333;
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-        }
+.business-card:hover{
+    transform:translateY(-10px);
+    border-color:#d8c38a;
+    box-shadow:0 15px 40px rgba(216,195,138,.08);
+}
 
-        .project p {
-            color: #aaa;
-        }
+.business-card img{
+    width:150px;
+    height:100px;
+    object-fit:contain;
+    margin-bottom:20px;
+}
 
-        .properties {
-            background: #0e0e0e;
-        }
+.business-card h3{
+    color:#d8c38a;
+    margin-bottom:10px;
+}
 
-        .property-card {
-            border: 1px solid #333;
-            padding: 30px;
-            background: #171717;
-            margin-bottom: 20px;
-        }
+.business-card p{
+    color:#999;
+    font-size:14px;
+}
 
-        .property-card h3 {
-            margin-bottom: 10px;
-        }
+.properties{
+    background:#0e1013;
+}
 
-        .property-card p {
-            color: #aaa;
-            margin-bottom: 15px;
-        }
+.property-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+}
 
-        .founder {
-            background: #151515;
-        }
+.property{
+    background:#15171b;
+    padding:25px 15px;
+    border-radius:14px;
+    text-align:center;
+    border:1px solid #292b30;
+    transition:.3s;
+}
 
-        .founder-box {
-            max-width: 850px;
-            border-left: 3px solid #aaa;
-            padding-left: 30px;
-        }
+.property:hover{
+    border-color:#d8c38a;
+    transform:translateY(-5px);
+}
 
-        .founder-box h3 {
-            font-size: 30px;
-            margin-bottom: 5px;
-        }
+.property .icon{
+    font-size:35px;
+    margin-bottom:10px;
+}
 
-        .founder-box .role {
-            color: #999;
-            margin-bottom: 20px;
-        }
+.property h3{
+    font-size:17px;
+    color:#ddd;
+}
 
-        .founder-box p {
-            color: #ccc;
-        }
+.projects{
+    background:#090a0c;
+}
 
-        .contact {
-            background: linear-gradient(135deg, #202020, #0c0c0c);
-        }
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
 
-        .contact-box {
-            max-width: 800px;
-        }
+.project-card{
+    overflow:hidden;
+    border-radius:15px;
+    border:1px solid #292b30;
+    background:#111317;
+}
 
-        .contact-box p {
-            color: #ccc;
-            margin-bottom: 25px;
-        }
+.project-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    transition:.5s;
+}
 
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-bottom: 30px;
-        }
+.project-card:hover img{
+    transform:scale(1.05);
+}
 
-        .contact-item {
-            border: 1px solid #444;
-            padding: 20px;
-        }
+.project-card div{
+    padding:18px;
+}
 
-        .contact-item span {
-            display: block;
-            color: #888;
-            font-size: 13px;
-            margin-bottom: 5px;
-        }
+.project-card h3{
+    color:#d8c38a;
+}
 
-        footer {
-            background: #050505;
-            padding: 35px 7%;
-            text-align: center;
-            color: #777;
-            border-top: 1px solid #222;
-        }
+.founder{
+    background:#0e1013;
+}
 
-        .social {
-            margin: 25px 0;
-        }
+.founder-grid{
+    display:grid;
+    grid-template-columns:380px 1fr;
+    gap:55px;
+    align-items:center;
+}
 
-        .social a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
+.founder-img{
+    width:100%;
+    border-radius:20px;
+    border:1px solid #d8c38a;
+    box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
 
-        @media (max-width: 800px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
+.founder h2{
+    font-size:38px;
+    margin-bottom:8px;
+}
 
-            nav a {
-                margin: 0 7px;
-            }
+.founder h3{
+    color:#d8c38a;
+    margin-bottom:20px;
+}
 
-            .business-grid,
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
+.founder p{
+    color:#aaa;
+    margin-bottom:15px;
+}
 
-            .service-grid,
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
+.quote{
+    border-left:3px solid #d8c38a;
+    padding-left:20px;
+    margin-top:25px;
+    color:#ddd;
+    font-style:italic;
+}
 
-            section {
-                padding: 65px 6%;
-            }
+.contact{
+    background:
+    linear-gradient(rgba(9,10,12,.94),rgba(9,10,12,.97)),
+    radial-gradient(circle,#34302a,#090a0c);
+}
 
-            .hero {
-                min-height: 80vh;
-                padding: 60px 6%;
-            }
-        }
-    </style>
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-card{
+    background:#111317;
+    border:1px solid #292b30;
+    padding:30px;
+    border-radius:18px;
+}
+
+.contact-card h3{
+    color:#d8c38a;
+    margin-bottom:20px;
+}
+
+.contact-item{
+    margin:18px 0;
+    color:#ccc;
+}
+
+.contact-item strong{
+    color:#d8c38a;
+}
+
+footer{
+    background:#050608;
+    border-top:1px solid #292b30;
+    padding:35px 20px;
+    text-align:center;
+    color:#777;
+}
+
+footer strong{
+    color:#d8c38a;
+}
+
+.social{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.social a{
+    padding:10px 18px;
+    border:1px solid #333;
+    border-radius:25px;
+    color:#bbb;
+    transition:.3s;
+}
+
+.social a:hover{
+    border-color:#d8c38a;
+    color:#d8c38a;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:900px){
+
+    nav{
+        display:none;
+    }
+
+    .business-grid{
+        grid-template-columns:1fr;
+    }
+
+    .property-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .project-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-grid,
+    .founder-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .founder-img{
+        max-width:450px;
+        display:block;
+        margin:auto;
+    }
+}
+
+@media(max-width:500px){
+
+    section{
+        padding:70px 15px;
+    }
+
+    .hero h1{
+        font-size:43px;
+        letter-spacing:4px;
+    }
+
+    .property-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .btn{
+        width:100%;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">TBD <span>GROUP.in</span></div>
+<div class="nav">
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#business">Businesses</a>
-        <a href="#services">Services</a>
-        <a href="#properties">Properties</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<div class="logo-text">
+TBD <span>GROUP.in</span>
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#business">Businesses</a>
+<a href="#properties">Properties</a>
+<a href="#projects">Projects</a>
+<a href="#founder">Founder</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</div>
 </header>
 
 
-<!-- HOME -->
+<!-- HERO -->
+
 <section class="hero" id="home">
-    <div class="hero-content">
 
-        <div class="small-title">BUILD • DESIGN • DEVELOP</div>
+<div class="hero-content">
 
-        <h1>
-            Building<br>
-            <span>Tomorrow.</span>
-        </h1>
+<img src="tbd-logo.png" class="hero-logo" alt="TBD GROUP.in Logo">
 
-        <p>
-            TBD GROUP.in brings together construction,
-            real estate and interior design under one vision.
-            We create spaces, properties and experiences built for the future.
-        </p>
+<h1>TBD <span>GROUP.in</span></h1>
 
-        <a href="#business" class="btn">Explore Our Businesses</a>
+<h2>Builders • Real Estate • Interiors</h2>
 
-        <a href="#contact" class="btn dark">Contact Us</a>
+<p>
+Three Visions. One Mission.
+Building spaces, creating value and shaping the future from Mangaluru, Karnataka.
+</p>
 
-    </div>
+<div class="buttons">
+
+<a href="#business" class="btn gold">
+Explore Our Businesses
+</a>
+
+<a href="https://wa.me/message/IDB436DVI6EMM1" class="btn">
+WhatsApp Us
+</a>
+
+</div>
+
+</div>
+
 </section>
 
 
 <!-- ABOUT -->
+
 <section class="about" id="about">
 
-    <div class="section-title">
-        <small>WHO WE ARE</small>
-        <h2>About TBD GROUP.in</h2>
-    </div>
+<div class="container">
 
-    <p class="about-text">
-        TBD GROUP.in is a growing business group focused on
-        Construction, Real Estate and Interior Design.
+<div class="section-title">
+<h2>About <span>TBD GROUP.in</span></h2>
+<p>Growing with vision, trust and quality.</p>
+</div>
 
-        Our vision is to build a trusted and professional brand
-        serving Mangalore, Dakshina Kannada and surrounding regions.
+<div class="about-grid">
 
-        From finding the right property to building and designing
-        your dream space, our businesses work together to deliver
-        complete solutions.
-    </p>
+<div class="about-text">
+
+<h3>Three Visions. One Mission.</h3>
+
+<p>
+TBD GROUP.in is a growing business group based in Mangaluru, Karnataka,
+bringing together construction, real estate and interior design under one vision.
+</p>
+
+<p>
+Our focus is on creating reliable property opportunities, quality construction,
+premium interiors and long-term value for our customers.
+</p>
+
+<p>
+We believe that every project should be built on
+<span class="highlight">trust, quality and commitment.</span>
+</p>
+
+</div>
+
+<div class="business-card">
+
+<h3>Our Vision</h3>
+
+<p>
+To build a trusted and premium business group from coastal Karnataka,
+serving customers through real estate, construction and interior design.
+</p>
+
+<br>
+
+<h3>Our Mission</h3>
+
+<p>
+Deliver quality spaces and property solutions while building strong,
+long-term relationships with our customers.
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- BUSINESSES -->
+
 <section id="business">
 
-    <div class="section-title">
-        <small>OUR BRANDS</small>
-        <h2>Our Businesses</h2>
-    </div>
+<div class="container">
 
-    <div class="business-grid">
+<div class="section-title">
+<h2>Our <span>Businesses</span></h2>
+<p>Three specialized businesses under one group.</p>
+</div>
 
-        <div class="business-card">
-            <div class="business-number">01</div>
-
-            <h3>TBD BUILDERS & DEVELOPERS</h3>
-
-            <p>
-                Construction and development solutions
-                focused on quality, planning and modern spaces.
-            </p>
-        </div>
+<div class="business-grid">
 
 
-        <div class="business-card">
-            <div class="business-number">02</div>
+<div class="business-card">
 
-            <h3>SR PRIME PROPERTIES</h3>
+<img src="tbd-builders.png" alt="TBD Builders & Developers">
 
-            <p>
-                Property buying, selling, rental and
-                real estate development solutions.
-            </p>
-        </div>
+<h3>TBD Builders & Developers</h3>
 
+<p>
+Construction and development solutions focused on quality,
+modern execution and reliable project delivery.
+</p>
 
-        <div class="business-card">
-            <div class="business-number">03</div>
-
-            <h3>AURELIV INTERIORS DESIGN</h3>
-
-            <p>
-                Modern interior design solutions for
-                residential and commercial spaces.
-            </p>
-        </div>
-
-    </div>
-
-</section>
+</div>
 
 
-<!-- SERVICES -->
-<section class="services" id="services">
+<div class="business-card">
 
-    <div class="section-title">
-        <small>WHAT WE DO</small>
-        <h2>Our Services</h2>
-    </div>
+<img src="sr-prime.png" alt="SR PRIME Properties">
 
-    <div class="service-grid">
+<h3>SR PRIME Properties</h3>
 
-        <div class="service">
-            <h3>🏗️ Construction</h3>
-            <p>
-                Residential and commercial construction solutions.
-            </p>
-        </div>
+<p>
+Properties & Real Estate Developers offering land,
+houses, flats and commercial property opportunities.
+</p>
 
-        <div class="service">
-            <h3>🏠 Real Estate</h3>
-            <p>
-                Property buying, selling, rental and development.
-            </p>
-        </div>
-
-        <div class="service">
-            <h3>🎨 Interior Design</h3>
-            <p>
-                Professional interior planning and design.
-            </p>
-        </div>
-
-        <div class="service">
-            <h3>📐 Property Development</h3>
-            <p>
-                Development opportunities and property projects.
-            </p>
-        </div>
-
-        <div class="service">
-            <h3>🏢 Commercial Spaces</h3>
-            <p>
-                Solutions for offices, shops and commercial properties.
-            </p>
-        </div>
-
-        <div class="service">
-            <h3>🏡 Residential Spaces</h3>
-            <p>
-                Homes designed around comfort and modern living.
-            </p>
-        </div>
-
-    </div>
-
-</section>
+</div>
 
 
-<!-- PROJECTS -->
-<section class="projects">
+<div class="business-card">
 
-    <div class="section-title">
-        <small>OUR WORK</small>
-        <h2>Projects</h2>
-    </div>
+<img src="aureliv.png" alt="AURELIV Interiors Design">
 
-    <div class="project-grid">
+<h3>AURELIV Interiors Design</h3>
 
-        <div class="project">
-            <h3>Residential Projects</h3>
-            <p>Homes designed and developed for modern living.</p>
-        </div>
+<p>
+Premium interior design solutions for residential,
+commercial and modern spaces.
+</p>
 
-        <div class="project">
-            <h3>Commercial Projects</h3>
-            <p>Professional spaces for businesses and organizations.</p>
-        </div>
+</div>
 
-        <div class="project">
-            <h3>Interior Projects</h3>
-            <p>Modern interiors designed for beautiful spaces.</p>
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 
 <!-- PROPERTIES -->
+
 <section class="properties" id="properties">
 
-    <div class="section-title">
-        <small>PROPERTY</small>
-        <h2>Featured Properties</h2>
-    </div>
+<div class="container">
 
-    <div class="property-card">
+<div class="section-title">
 
-        <h3>Looking for a Property?</h3>
+<h2>Properties</h2>
 
-        <p>
-            Independent houses, flats, land and commercial
-            properties can be listed here.
-        </p>
+<p>
+Find the right property for your next investment or home.
+</p>
 
-        <a href="#contact" class="btn">
-            Enquire Now
-        </a>
+</div>
 
-    </div>
+<div class="property-grid">
 
-    <div class="property-card">
+<div class="property">
+<div class="icon">🌳</div>
+<h3>Land</h3>
+</div>
 
-        <h3>List Your Property</h3>
+<div class="property">
+<div class="icon">🏠</div>
+<h3>Houses</h3>
+</div>
 
-        <p>
-            Have a property to sell, rent or lease?
-            Contact our real estate team.
-        </p>
+<div class="property">
+<div class="icon">🏢</div>
+<h3>Flats</h3>
+</div>
 
-        <a href="#contact" class="btn">
-            List Property
-        </a>
+<div class="property">
+<div class="icon">🏬</div>
+<h3>Commercial</h3>
+</div>
 
-    </div>
+<div class="property">
+<div class="icon">🔑</div>
+<h3>Rent / Sale / Lease</h3>
+</div>
+
+</div>
+
+<div class="buttons">
+
+<a href="https://wa.me/message/IDB436DVI6EMM1" class="btn gold">
+Ask About Properties
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section class="projects" id="projects">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Our <span>Projects</span></h2>
+
+<p>
+Construction, interiors and completed developments.
+</p>
+
+</div>
+
+<div class="project-grid">
+
+<div class="project-card">
+
+<img src="project1.jpg" alt="Construction Project">
+
+<div>
+<h3>Construction Projects</h3>
+<p>Quality construction and development work.</p>
+</div>
+
+</div>
+
+
+<div class="project-card">
+
+<img src="project2.jpg" alt="Interior Project">
+
+<div>
+<h3>Interior Projects</h3>
+<p>Modern and premium interior concepts.</p>
+</div>
+
+</div>
+
+
+<div class="project-card">
+
+<img src="project3.jpg" alt="Completed Project">
+
+<div>
+<h3>Completed Projects</h3>
+<p>Showcasing our work and commitment to quality.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- FOUNDER -->
-<section class="founder">
 
-    <div class="section-title">
-        <small>LEADERSHIP</small>
-        <h2>Founder & Chairman</h2>
-    </div>
+<section class="founder" id="founder">
 
-    <div class="founder-box">
+<div class="container">
 
-        <h3>ABOOBBAKKER FAHIZ</h3>
+<div class="section-title">
 
-        <div class="role">
-            Founder & Chairman — TBD GROUP.in
-        </div>
+<h2>Meet the <span>Founder</span></h2>
 
-        <p>
-            Building a growing business group with a vision
-            to create trusted solutions across construction,
-            real estate and interior design.
-        </p>
+<p>Leadership behind TBD GROUP.in</p>
 
-    </div>
+</div>
+
+<div class="founder-grid">
+
+<div>
+
+<img src="founder.jpg"
+class="founder-img"
+alt="Aboobakker Fahiz - Founder and Chairman">
+
+</div>
+
+
+<div>
+
+<h2>ABOOBAKKER FAHIZ</h2>
+
+<h3>FOUNDER & CHAIRMAN</h3>
+
+<p>
+The Founder and Chairman of TBD Group Pvt Ltd Company in
+Mangaluru is Aboobakker Fahiz.
+</p>
+
+<p>
+He leads the company's multi-wing operations, overseeing structural
+execution under <strong>TBD Builders & Developers</strong>, premium
+property transactions under <strong>SR PRIME Properties</strong>,
+and interior conceptualization through
+<strong>AURELIV Interiors Design</strong>.
+</p>
+
+<p>
+Alongside his real estate development ventures, Aboobakker Fahiz
+has been involved in youth and student leadership activities in the
+Dakshina Kannada region.
+</p>
+
+<p>
+Under his leadership, TBD GROUP.in operates as a growing
+infrastructure and property startup in coastal Karnataka.
+</p>
+
+<div class="quote">
+"Three Visions. One Mission."
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- CONTACT -->
+
 <section class="contact" id="contact">
 
-    <div class="section-title">
-        <small>GET IN TOUCH</small>
-        <h2>Contact Us</h2>
-    </div>
+<div class="container">
 
-    <div class="contact-box">
+<div class="section-title">
 
-        <p>
-            Have a property requirement, construction project
-            or interior design project? Get in touch with us.
-        </p>
+<h2>Contact <span>Us</span></h2>
 
-        <div class="contact-info">
+<p>Let's discuss your next property or project.</p>
 
-            <div class="contact-item">
-                <span>LOCATION</span>
-                Mangalore, Dakshina Kannada, Karnataka
-            </div>
+</div>
 
-            <div class="contact-item">
-                <span>EMAIL</span>
-                tbdgroup.in@gmail.com
-            </div>
+<div class="contact-grid">
 
-            <div class="contact-item">
-                <span>INSTAGRAM</span>
-                @tbdgroup.in
-            </div>
 
-            <div class="contact-item">
-                <span>BUSINESS</span>
-                Construction • Real Estate • Interiors
-            </div>
+<div class="contact-card">
 
-        </div>
+<h3>TBD GROUP.in</h3>
 
-        <a href="mailto:tbdgroup.in@gmail.com" class="btn">
-            Email Us
-        </a>
+<div class="contact-item">
+<strong>📍 Location:</strong><br>
+Mangaluru, Karnataka
+</div>
 
-    </div>
+<div class="contact-item">
+<strong>📞 Phone:</strong><br>
+<a href="tel:+916360695474">+91 6360695474</a>
+</div>
+
+<div class="contact-item">
+<strong>✉️ Email:</strong><br>
+<a href="mailto:tbdgroup.in@gmail.com">
+tbdgroup.in@gmail.com
+</a>
+</div>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>Connect With Us</h3>
+
+<p style="color:#aaa;margin-bottom:25px;">
+For properties, construction, interior design,
+rent, sale or lease enquiries, contact our team.
+</p>
+
+<div class="buttons" style="justify-content:flex-start;">
+
+<a href="https://wa.me/message/IDB436DVI6EMM1"
+class="btn gold">
+WhatsApp
+</a>
+
+<a href="https://www.instagram.com/tbdgroup.in/"
+class="btn">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- FOOTER -->
+
 <footer>
 
-    <div class="logo">
-        TBD <span>GROUP.in</span>
-    </div>
+<p>
+© 2026 <strong>TBD GROUP.in Private Limited</strong>.
+All Rights Reserved.
+</p>
 
-    <div class="social">
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-        <a href="#">LinkedIn</a>
-    </div>
+<p>
+Mangaluru, Karnataka • Builders • Real Estate • Interiors
+</p>
 
-    <p>
-        © 2026 TBD GROUP.in. All Rights Reserved.
-    </p>
+<div class="social">
+
+<a href="https://www.instagram.com/tbdgroup.in/">
+Instagram
+</a>
+
+<a href="https://wa.me/message/IDB436DVI6EMM1">
+WhatsApp
+</a>
+
+<a href="tel:+916360695474">
+Call
+</a>
+
+<a href="mailto:tbdgroup.in@gmail.com">
+Email
+</a>
+
+</div>
 
 </footer>
 
